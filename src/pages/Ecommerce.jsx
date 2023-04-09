@@ -3,13 +3,8 @@ import { BsCurrencyDollar } from 'react-icons/bs';
 import { GoPrimitiveDot } from 'react-icons/go';
 import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
 
-import { Stacked, Pie, Button, LineChart, SparkLine } from '../components';
-import {
-  earningData,
-  dropdownData,
-  SparklineAreaData,
-  ecomPieChartData,
-} from '../data/dummy';
+import { Button } from '../components';
+import { earningData, dropdownData } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const DropDown = ({ currentMode }) => (
@@ -116,17 +111,6 @@ const ECommerce = () => {
                 <p className="text-gray-500 mt-1">Expense</p>
               </div>
 
-              <div className="mt-5">
-                <SparkLine
-                  currentColor={currentColor}
-                  id="line-sparkLine"
-                  type="Line"
-                  height="80px"
-                  width="250px"
-                  data={SparklineAreaData}
-                  color={currentColor}
-                />
-              </div>
               <div className="mt-10">
                 <Button
                   color="white"
@@ -135,9 +119,6 @@ const ECommerce = () => {
                   borderRadius="10px"
                 />
               </div>
-            </div>
-            <div>
-              <Stacked currentMode={currentMode} width="320px" height="360px" />
             </div>
           </div>
         </div>
@@ -156,33 +137,12 @@ const ECommerce = () => {
                 <p className="text-gray-200">Monthly revenue</p>
               </div>
             </div>
-
-            <div className="mt-4">
-              <SparkLine
-                currentColor={currentColor}
-                id="column-sparkLine"
-                height="100px"
-                type="Column"
-                data={SparklineAreaData}
-                width="320"
-                color="rgb(242, 252, 253)"
-              />
-            </div>
           </div>
 
           <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl md:w-400 p-8 m-3 flex justify-center items-center gap-10">
             <div>
               <p className="text-2xl font-semibold ">$43,246</p>
               <p className="text-gray-400">Yearly sales</p>
-            </div>
-
-            <div className="w-40">
-              <Pie
-                id="pie-chart"
-                data={ecomPieChartData}
-                legendVisiblity={false}
-                height="160px"
-              />
             </div>
           </div>
         </div>
@@ -193,9 +153,6 @@ const ECommerce = () => {
           <div className="flex justify-between items-center gap-2 mb-10">
             <p className="text-xl font-semibold">Sales Overview</p>
             <DropDown currentMode={currentMode} />
-          </div>
-          <div className="md:w-full overflow-auto">
-            <LineChart />
           </div>
         </div>
       </div>
