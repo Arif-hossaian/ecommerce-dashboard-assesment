@@ -1,3 +1,4 @@
+/* eslint-disable import/no-duplicates */
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
@@ -8,6 +9,7 @@ import { ECommerce, Orders, Customers, Auth } from './pages';
 import './App.css';
 
 import { useStateContext } from './contexts/ContextProvider';
+// eslint-disable-next-line import/order, semi
 
 const MainLayout = () => {
   const {
